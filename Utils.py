@@ -7,15 +7,16 @@ class XpathObjects:
 
 
 class ListHelper:
-    def __init__(self, user1, user2, user3, user4):
+    def __init__(self, user1, user2, user3, user4, user5):
         self.user1 = user1
         self.user2 = user2
         self.user3 = user3
         self.user4 = user4
+        self.user5 = user5
 
     def GetRandom_User_Order(self):
 
-        Number = random.randint(1,9)
+        Number = random.randint(1,20)
 
         Result = ""
 
@@ -28,29 +29,65 @@ class ListHelper:
         if Number == 3:
             Result = self.user1 + " " + self.user4
 
+        if Number == 4:
+            Result = self.user1 + " " + self.user5
+
         '''USER 2 RESULT'''
 
-        if Number == 4:
+        if Number == 5:
             Result = self.user2 + " " + self.user1
         
-        if Number == 5:
+        if Number == 6:
             Result = self.user2 + " " + self.user3
 
-        if Number == 6:
+        if Number == 7:
             Result = self.user2 + " " + self.user4
+
+        if Number == 8:
+            Result = self.user2 + " " + self.user5
 
 
         '''USER 3 RESULT'''
 
-        if Number == 7:
+        if Number == 9:
             Result = self.user3 + " " + self.user2
         
-        if Number == 8:
+        if Number == 10:
             Result = self.user3 + " " + self.user1
 
-        if Number == 9:
+        if Number == 11:
             Result = self.user3 + " " + self.user4
 
+        if Number == 12:
+            Result = self.user3 + " " + self.user5
+        
+        '''USER 4 RESULT '''
+
+        if Number == 13:
+            Result = self.user4 + " " + self.user2
+        
+        if Number == 14:
+            Result = self.user4 + " " + self.user1
+
+        if Number == 15:
+            Result = self.user4 + " " + self.user3
+
+        if Number == 16:
+            Result = self.user4 + " " + self.user5
+
+        '''USER 5 RESULT '''
+
+        if Number == 17:
+            Result = self.user5 + " " + self.user2
+        
+        if Number == 18:
+            Result = self.user5 + " " + self.user1
+
+        if Number == 19:
+            Result = self.user5 + " " + self.user3
+
+        if Number == 20:
+            Result = self.user5 + " " + self.user4
         
         return Result
     

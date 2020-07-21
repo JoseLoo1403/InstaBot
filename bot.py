@@ -7,10 +7,10 @@ import random
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
-driver.get("GiveAwayUrl")
+driver.get("https://www.instagram.com/p/CC2f7-6Dq5h/")
 
 
-Helper = Utils.ListHelper('@user','@user ','@user','@user')
+Helper = Utils.ListHelper('@sampineda18','@clementeramost ','@jair.abdul','@jaysonerazo','@fredyjmunoz')
 XpathHelper = Utils.XpathObjects
 
 
@@ -36,13 +36,16 @@ def MakeComments():
         TextBox = driver.find_element_by_xpath(XpathHelper.textBox)
         TextBox.send_keys(x)
         sleep(2)
+
         Publish = driver.find_element_by_xpath(XpathHelper.PublishBtn)
         Publish.click()
-        sleep(random.randint(4,6))
+        sleep(random.randint(5,15))
+
+    print("Compltado!")
 
 
 verificator = "1"
-
+ 
 while(verificator == "1"):
     Selector = input("Que desea hacer?")
 
