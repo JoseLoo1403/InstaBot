@@ -2,21 +2,28 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import Utils
+import random
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
-driver.get("https://www.instagram.com/p/CC2r0WzlCap/")
+driver.get("GiveAwayUrl")
 
 
-Helper = Utils.ListHelper('hola','2','hola34')
+Helper = Utils.ListHelper('@user','@user ','@user','@user')
 XpathHelper = Utils.XpathObjects
 
 
 UsersList = list()
 
-for p in range(10):
-    UsersList.append(Helper.GetRandom_User_Order())
+def FillUsers():
+    UsersList.clear()
+
+    for p in range(20):
+        UsersList.append(Helper.GetRandom_User_Order())
+    
+    print("Combinaciones hechas")
+    
 
 sleep(6)
 
@@ -28,18 +35,23 @@ def MakeComments():
     for x in UsersList:
         TextBox = driver.find_element_by_xpath(XpathHelper.textBox)
         TextBox.send_keys(x)
-        sleep(3)
+        sleep(2)
         Publish = driver.find_element_by_xpath(XpathHelper.PublishBtn)
         Publish.click()
-        sleep(3)
+        sleep(random.randint(4,6))
 
 
 verificator = "1"
 
 while(verificator == "1"):
-    Selector = input()
+    Selector = input("Que desea hacer?")
 
     if Selector == "1":
-        MakeComments()
+
+        try:
+            FillUsers()
+            MakeComments()
+        except:
+            print("Error al publicar")
     
     verificator = input("Quiere seguir?")
