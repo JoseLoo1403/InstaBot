@@ -7,15 +7,16 @@ import random
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
-driver.get("https://www.instagram.com/p/CC2f7-6Dq5h/")
+driver.get("https://www.instagram.com/p/CCZzrs4jk5O/")
 
 
-Helper = Utils.ListHelper('@sampineda18','@clementeramost ','@jair.abdul','@jaysonerazo','@fredyjmunoz')
+Helper = Utils.ListHelper('@sampineda18','@clementeramost ','@jair.abdul','@jaysonerazo','@francesca_bano')
 XpathHelper = Utils.XpathObjects
 
 
 UsersList = list()
 
+#fill the list of comments with random order users
 def FillUsers():
     UsersList.clear()
 
@@ -64,7 +65,7 @@ def MakeComments():
             sleep(10)
             driver.refresh()
 
-        sleep(random.randint(5,15))
+        sleep(random.randint(5,10))
 
     print("Compltado!")
 
@@ -74,12 +75,13 @@ verificator = "1"
 while(verificator == "1"):
     Selector = input("Que desea hacer?")
 
-    if Selector == "1":
-
-        try:
-            FillUsers()
-            MakeComments()
-        except:
-            print("Error al publicar")
+    for x in range(10):
+        sleep(1)
+        if Selector == "1":
+            try:
+                FillUsers()
+                MakeComments()
+            except:
+                print("Error al publicar")
     
     verificator = input("Quiere seguir?")
