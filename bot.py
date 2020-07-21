@@ -30,7 +30,7 @@ sleep(6)
 LogBtn = driver.find_element_by_xpath(XpathHelper.LoginButton)
 LogBtn.click()
 
-
+#Che mira esto para  hacer los comments 
 def MakeComments():
     for x in UsersList:
         TextBox = driver.find_element_by_xpath(XpathHelper.textBox)
@@ -40,11 +40,11 @@ def MakeComments():
         Publish.click()
         sleep(random.randint(4,6))
 
-
+#El terminator che mira
 verificator = "1"
 
 while(verificator == "1"):
-    Selector = input("Que desea hacer?")
+    Selector = input("¿Que queres hacer che?")
 
     if Selector == "1":
 
@@ -52,6 +52,6 @@ while(verificator == "1"):
             FillUsers()
             MakeComments()
         except:
-            print("Error al publicar")
+            print("Error al publicar che, sos retonto.")
     
-    verificator = input("Quiere seguir?")
+    verificator = input("¿Queres seguir che?")
