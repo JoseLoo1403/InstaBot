@@ -25,12 +25,28 @@ def FillUsers():
     print("Combinaciones hechas")
     
 
+#Make login click
 sleep(6)
-
 LogBtn = driver.find_element_by_xpath(XpathHelper.LoginButton)
 LogBtn.click()
 
+#verify if its block
+def VerifyErrorButton():
+    try:
+        ErrorBtn = driver.find_element_by_xpath(XpathHelper.ErrorButton)
+        ErrorBtn.click()
+    except:
+        return False
+    
+    print("Error detectado")
+    return True
 
+
+#Make publish with error button
+
+
+
+#Make comment function
 def MakeComments():
     for x in UsersList:
         TextBox = driver.find_element_by_xpath(XpathHelper.textBox)
@@ -39,6 +55,15 @@ def MakeComments():
 
         Publish = driver.find_element_by_xpath(XpathHelper.PublishBtn)
         Publish.click()
+
+        sleep(1)
+
+        if VerifyErrorButton():
+            sleep(10)
+            driver.refresh()
+            sleep(10)
+            driver.refresh()
+
         sleep(random.randint(5,15))
 
     print("Compltado!")

@@ -4,7 +4,7 @@ class XpathObjects:
     textBox = "/html/body/div[1]/section/main/div/div[1]/article/div[3]/section[3]/div/form/textarea"
     LoginButton = "/html/body/div[1]/section/main/div/div/article/div[3]/section[3]/div/span/a"
     PublishBtn = "/html/body/div[1]/section/main/div/div[1]/article/div[3]/section[3]/div/form/button"
-
+    ErrorButton = "/html/body/div[2]/div/div/button"
 
 class ListHelper:
     def __init__(self, user1, user2, user3, user4, user5):
